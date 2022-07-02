@@ -1,21 +1,21 @@
-#include <stdlib.h>
-/**
- * main -> assign a random number to the variable n each time it is executed
- * and print the last digit of the number stored in the variable
- * Return : always 0
+/*
+ * File: 3-print_alphabets.c
+ * Auth: Brennan D Baraban
  */
-int main(void)                                                                                 
-{
-	int ch;
-	for (ch = 97; ch <= 122; ch++)
-	{
-		putchar(ch);
-	}
-	for (ch = 65; ch <= 90; ch++)
-	{
-		putchar(ch);
-	}
-	putchar(10); /* this is an ascii code new line*/
 
+#include <stdio.h>
+
+/**
+ * main - Prints the alphabet in lowercase, and then in uppercase.
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{char letter;
+	for (letter = 'a'; letter <= 'z'; letter++)
+		putchar(letter);
+	for (letter = 'A'; letter <= 'Z'; letter++)
+		putchar(letter);
+	putchar('\n');
 	return (0);
 }

@@ -1,21 +1,22 @@
-#include <stdlib.h>
-/**                                                                                            
- * main -> assign a random number to the variable n each time it is executed
- * and print the last digit of the number stored in the variable
- * Return : always 0
+/*
+ * File: 4-print_alphabt.c
+ * Auth: Brennan D Baraban
  */
-int main(void)                                                                                 
-{
-	int ch; 
-	for (ch = 'a'; ch <= 'z'; ch++)
+
+#include <stdio.h>
+
+/**
+ * main - Prints the alphabet in lowercase, except for q and e.
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{char letter;
+	for (letter = 'a'; letter <= 'z'; letter++)
 	{
-		if (ch != 'q' && ch != 'e')
-		{
-			putchar(ch);
-		}
+		if (letter != 'e' && letter != 'q')
+			putchar(letter);
 	}
-
-	putchar(10); /* this is an ascii code for new line*/
-
+	Putchar('\n');
 	return (0);
 }
