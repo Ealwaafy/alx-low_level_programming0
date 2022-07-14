@@ -1,28 +1,33 @@
 #include "main.h"
+
 /**
- * _strncpy - copie the string
- * @dest: array that returns
- * @src: the pointer that receive the string
- * @n: times to interate
+ * _strspn - Gets the length of a prefix substring.
+ * @s: The string to be searched.
+ * @accept: The prefix to be measured.
  *
- * Return: the parameter dest.
+ * Return: The number of bytes in s which
+ *         consist only of bytes from accept.
  */
-char *_strncpy(char *dest, char *src, int n)
+unsigned int _strspn(char *s, char *accept)
 {
-	int i;
+	unsigned int bytes = 0;
+	int index;
 
-	i = 0;
-	while (i < n && src[i] != '\0')
+	while (*s)
 	{
-		dest[i] = src[i];
-		i++;
-	}
+		for (index = 0; accept[index]; index++)
+		{
+			if (*s == accept[index])
+			{
+				bytes++;
+				break;
+			}
 
-	i = i;
-	while (i < n)
-	{
-		dest[i] = '\0';
-		i++;
+			else if (accept[index + 1] == '\0')
+				return (bytes);
+		}
+
+		s++;
 	}
-	return (dest);
+	return (bytes);
 }
